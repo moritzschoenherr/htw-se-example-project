@@ -1,24 +1,27 @@
-= Beispiel-Dokumentation mit AsciiDoc 
-Vorname Nachname <email> 
-1.0, 01.09.2019 
-:toc: 
+= Beispiel-Dokumentation mit AsciiDoc
+Vorname Nachname <email>
+1.0, 01.09.2019
+:toc:
 :toc-title: Inhaltsverzeichnis
 :source-highlighter: rouge
-// Platzhalter für weitere Dokumenten-Attribute 
+:imagesdir: images
+// Platzhalter für weitere Dokumenten-Attribute
 
 == Einführung
 Dieses Dokument dient im Praktikum als Spielwiese für das Kennenlernen und praktische Üben der Syntax von AsciiDoc.
+
 == Kennenlernen der Syntax
 
 Über die Aufgaben wird das Dokument Stück für Stück aufgebaut und angepasst.
 
 === Listen
 
-.Beispiel: unsortierte Liste 
+.Beispiel: unsortierte Liste
 * West wood maze
 ** Maze heart
 *** Reflection pool
 ** Secret exit
+** ...
 * Untracked file in git repository
 
 .Beispiel: sortierte Liste
@@ -30,30 +33,56 @@ Dieses Dokument dient im Praktikum als Spielwiese für das Kennenlernen und prak
 
 === Tabellen und Textformatierung
 
-[cols="1,1,1"]  
-|=== 
-|Formatierung|Syntax|Beschreibung
-
-|*bold*|+*bold*+|fetter Text
-|_italic_|+_italic_+|kursiver Text
-|`monospace`|`++`monospace`++`|Text mit fester Laufweite
-|bolditalic|+bolditalic+|Text mit kombinierter Formatierung
-|*_bolditalic_*|+*_bolditalic_*+|Text mit Formatierung innerhalb eines Wortes
+.Formatierung von Text
+[#table01]
+[cols="^1,^1,3"]
 |===
-*S_oftware **_E**nginee``ri_ng``
+| Formatierung         | Syntax                  | Beschreibung
+
+| *bold*               | `+*bold*+`              | fetter Text
+| _italic_             | `+_italic_+`            | kursiver Text
+| `monospace`          | `++`monospace`++`       | Text mit fester Laufweite
+| *_bolditalic_*       | `++*_bolditalic_*++`    | Text mit kombinierter Formatierung
+| **bold**__italic__   | `+**bold**__italic__+`  | Text mit Formatierung innerhalb eines Wortes
+|===
+
+* Beispiel: **S**__o__ftw__a__r__e__ **__E__**ng__i__n__ee__``r__i__ng``
 
 === Quellcode
 
-hello_world.c 
-[source,c]
+.hello_world.c
+[#code01]
+[source, c]
 ----
 #include <stdio.h>
 
 int main(int argc, char* argv[])
 {
-    printf("Hello, World!\n");
+    printf("Hello, World\n");
     return 0;
 }
 ----
 
 === Bilder
+
+.Testbild 1
+[#img1]
+image::test.png[Testbild 1]
+
+=== Verweise
+
+* Überschrift: <<Quellcode>>
+* Siehe: <<table01>>
+* Siehe: <<img1, Bild 01>>
+
+* Siehe <<img1>> oder <<Tabellen und Textformatierung>> oder <<Bilder>>
+
+* Siehe Quellcodeausschnitt: <<code01>>
+
+=== Includes
+
+.hello_world.c - main()
+[source, c]
+----
+include::../src/hello_world.c[lines=3..7]
+----
