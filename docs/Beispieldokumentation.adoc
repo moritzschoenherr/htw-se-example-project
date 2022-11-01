@@ -3,6 +3,7 @@ Vorname Nachname <email>
 1.0, 01.09.2019 
 :toc: 
 :toc-title: Inhaltsverzeichnis
+:source-highlighter: rouge
 // Platzhalter für weitere Dokumenten-Attribute 
 
 == Einführung
@@ -31,4 +32,28 @@ Dieses Dokument dient im Praktikum als Spielwiese für das Kennenlernen und prak
 
 [cols="1,1,1"]  
 |=== 
-|
+|Formatierung|Syntax|Beschreibung
+
+|*bold*|+*bold*+|fetter Text
+|_italic_|+_italic_+|kursiver Text
+|`monospace`|`++`monospace`++`|Text mit fester Laufweite
+|bolditalic|+bolditalic+|Text mit kombinierter Formatierung
+|*_bolditalic_*|+*_bolditalic_*+|Text mit Formatierung innerhalb eines Wortes
+|===
+*S_oftware **_E**nginee``ri_ng``
+
+=== Quellcode
+
+hello_world.c 
+[source,c]
+----
+#include <stdio.h>
+
+int main(int argc, char* argv[])
+{
+    printf("Hello, World!\n");
+    return 0;
+}
+----
+
+=== Bilder
